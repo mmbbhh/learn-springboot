@@ -11,6 +11,9 @@
 	<groupId>com.day01</groupId>
 	<artifactId>day01</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>war</packaging>
+
 	<name>day01</name>
 	<description>Demo project for Spring Boot</description>
 
