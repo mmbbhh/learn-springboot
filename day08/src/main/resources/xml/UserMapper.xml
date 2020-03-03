@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.day08.day08.mapper.UserMapper">
+    <select id="loadUserByUsername" resultType="com.day08.day08.model.User">
+        SELECT * FROM user WHERE username=#{username}
+    </select>
+    <select id="getUserRolesByUid" resultType="com.day08.day08.model.Role">
+        SELECT * FROM role r,user_role ur WHERE r.id=ur.id AND ur.id=#{id}
+    </select>
+</mapper>
