@@ -1,0 +1,20 @@
+package com.day09.day09.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Hello {
+    @GetMapping("/admin/hello")
+    public String admin() {
+        return "Hello admin";
+    }
+    @GetMapping("/user/hello")
+    public String user() {
+        return "Hello user";
+    }
+    @GetMapping("/hello")
+    public String hi() {
+        return "Hello";
+    }
+}
