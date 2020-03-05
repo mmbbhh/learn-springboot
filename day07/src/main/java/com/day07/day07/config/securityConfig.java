@@ -42,14 +42,11 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //访问admin目录必须有ADMIN权限
-                .antMatchers("/admin/**")
-                .hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 //访问user目录必须有ADMIN或USER权限
-                .antMatchers("/user/**")
-                .access("hasAnyRole('ADMIN','USER')")
+                .antMatchers("/user/**").access("hasAnyRole('ADMIN','USER')")
                 //访问DB目录必须有ADMIN和DBA权限
-                .antMatchers("/db/**")
-                .access("hasRole('ADMIN') and hasRole('DBA')")
+                .antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
                 //其他目录必须登陆后才能访问
                 .anyRequest()
                 .authenticated()
